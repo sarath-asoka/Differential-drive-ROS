@@ -1,0 +1,246 @@
+<?xml version="1.0" ?>
+<robot name="zigbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find zigbot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find zigbot_description)/urdf/zigbot.trans" />
+<xacro:include filename="$(find zigbot_description)/urdf/zigbot.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-9.043267671554842e-17 3.2884609714744876e-17 0.060422988123042955"/>
+    <mass value="0.08214174617539786"/>
+    <inertia ixx="0.000168" ixy="-0.0" ixz="-0.0" iyy="0.000156" iyz="0.0" izz="0.00015"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://zigbot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://zigbot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_rt_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.00692915432300004 2.7070936294477655e-05 0.005505365887022544"/>
+    <mass value="0.02040378684567474"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="0.0" iyy="2e-06" iyz="-0.0" izz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.03 -0.0 -0.016"/>
+    <geometry>
+      <mesh filename="package://zigbot_description/meshes/motor_rt_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.03 -0.0 -0.016"/>
+    <geometry>
+      <mesh filename="package://zigbot_description/meshes/motor_rt_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_lf_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.006929160844486099 -2.707014145487019e-05 0.005505365998612982"/>
+    <mass value="0.020403802388617387"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="-0.0" iyy="2e-06" iyz="0.0" izz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.03 -0.0 -0.016"/>
+    <geometry>
+      <mesh filename="package://zigbot_description/meshes/motor_lf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.03 -0.0 -0.016"/>
+    <geometry>
+      <mesh filename="package://zigbot_description/meshes/motor_lf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_lf_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0075397485196090075 -7.404860516233094e-10 -6.133384122891661e-06"/>
+    <mass value="0.020021601354988313"/>
+    <inertia ixx="5e-06" ixy="-0.0" ixz="-0.0" iyy="3e-06" iyz="0.0" izz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.0498 -0.0 -0.021"/>
+    <geometry>
+      <mesh filename="package://zigbot_description/meshes/wheel_lf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.0498 -0.0 -0.021"/>
+    <geometry>
+      <mesh filename="package://zigbot_description/meshes/wheel_lf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_rt_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.007539748519609014 1.4684614466631274e-08 -6.144582279571376e-06"/>
+    <mass value="0.020021601354988358"/>
+    <inertia ixx="5e-06" ixy="0.0" ixz="0.0" iyy="3e-06" iyz="-0.0" izz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0498 -0.0 -0.021"/>
+    <geometry>
+      <mesh filename="package://zigbot_description/meshes/wheel_rt_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0498 -0.0 -0.021"/>
+    <geometry>
+      <mesh filename="package://zigbot_description/meshes/wheel_rt_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Rpi_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0009634108277671216 0.01399077374865185 0.005870057011654592"/>
+    <mass value="0.13484674320313142"/>
+    <inertia ixx="8.5e-05" ixy="-1e-06" ixz="-0.0" iyy="4e-05" iyz="-9e-06" izz="0.000119"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.057993"/>
+    <geometry>
+      <mesh filename="package://zigbot_description/meshes/Rpi_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.057993"/>
+    <geometry>
+      <mesh filename="package://zigbot_description/meshes/Rpi_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="9.192633575898207e-05 -0.006739381580401455 0.03266827574680087"/>
+    <mass value="1.3392964352221826"/>
+    <inertia ixx="0.000967" ixy="1e-06" ixz="3e-06" iyy="0.000619" iyz="0.000159" izz="0.001105"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.099993"/>
+    <geometry>
+      <mesh filename="package://zigbot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.099993"/>
+    <geometry>
+      <mesh filename="package://zigbot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="1.408072946431147e-19 -0.0475 -0.005885869565217389"/>
+    <mass value="0.01595290932015854"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="-0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.014"/>
+    <geometry>
+      <mesh filename="package://zigbot_description/meshes/caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.014"/>
+    <geometry>
+      <mesh filename="package://zigbot_description/meshes/caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster_2">
+  <inertial>
+    <origin rpy="0 0 0" xyz="1.408072946431147e-19 0.0475 -0.005885869565217389"/>
+    <mass value="0.01595290932015854"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="-0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.014"/>
+    <geometry>
+      <mesh filename="package://zigbot_description/meshes/caster_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.014"/>
+    <geometry>
+      <mesh filename="package://zigbot_description/meshes/caster_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="motor_right" type="fixed">
+  <origin rpy="0 0 0" xyz="0.03 0.0 0.016"/>
+  <parent link="base_link"/>
+  <child link="motor_rt_1"/>
+</joint>
+
+<joint name="motor_left" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.03 0.0 0.016"/>
+  <parent link="base_link"/>
+  <child link="motor_lf_1"/>
+</joint>
+
+<joint name="wheel_left" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.0198 0.0 0.005"/>
+  <parent link="motor_lf_1"/>
+  <child link="wheel_lf_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="wheel_right" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0198 0.0 0.005"/>
+  <parent link="motor_rt_1"/>
+  <child link="wheel_rt_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="raspi" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.057993"/>
+  <parent link="base_link"/>
+  <child link="Rpi_1"/>
+</joint>
+
+<joint name="lidar" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.099993"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="caster1" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.014"/>
+  <parent link="base_link"/>
+  <child link="caster_1"/>
+</joint>
+
+<joint name="caster2" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.014"/>
+  <parent link="base_link"/>
+  <child link="caster_2"/>
+</joint>
+
+</robot>
